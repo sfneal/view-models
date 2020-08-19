@@ -1,13 +1,11 @@
 <?php
 
-
 namespace Sfneal\ViewModels\Interfaces;
-
 
 interface Header
 {
     /**
-     * Retrieve the model form header
+     * Retrieve the model form header.
      *
      * @return string
      */
