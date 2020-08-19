@@ -26,18 +26,10 @@ abstract class AbstractViewModel extends ViewModel
      */
     public $prefix;
 
-    public $menu_active = null;
-    public $has_breadcrumbs = null;
-    public $pages = null;
-
-    public $title = null;
-    public $sub = null;
-    public $text = null;
-
+    /**
+     * @var null View name
+     */
     public $view = null;
-    public $id = null;
-
-    public $hideContactForm = false;
 
     /**
      * Render the View
