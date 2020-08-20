@@ -5,6 +5,7 @@ namespace Sfneal\ViewModels;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\View;
 use RuntimeException;
+use Sfneal\Helpers\Redis\RedisCache;
 use Spatie\ViewModels\ViewModel;
 
 abstract class AbstractViewModel extends ViewModel
@@ -104,7 +105,7 @@ abstract class AbstractViewModel extends ViewModel
         }
 
         // Cache the View if it doesn't exist
-        return redisRemember($this->redisViewKey(), $this->getTTL($ttl), function () {
+        return RedisCache::remember($this->redisViewKey(), $this->getTTL($ttl), function () {
             return $this->__render();
         });
     }
@@ -132,7 +133,7 @@ abstract class AbstractViewModel extends ViewModel
      */
     public function invalidateCache()
     {
-        redisDelete('views:'.$this->view);
+        RedisCache::delete('views:'.$this->view);
 
         return $this;
     }
