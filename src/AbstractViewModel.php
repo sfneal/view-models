@@ -3,7 +3,6 @@
 namespace Sfneal\ViewModels;
 
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\View;
 use RuntimeException;
 use Spatie\ViewModels\ViewModel;
@@ -105,8 +104,7 @@ abstract class AbstractViewModel extends ViewModel
         }
 
         // Cache the View if it doesn't exist
-        // todo: add use of Cacheable
-        return Cache::remember($this->redisViewKey(), $this->getTTL($ttl), function () {
+        return redisRemember($this->redisViewKey(), $this->getTTL($ttl), function () {
             return $this->__render();
         });
     }
