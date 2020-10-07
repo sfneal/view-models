@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": ">=7.1",
-        "laravel/framework": ">=6.0",
+        "laravel/framework": ">=5.0",
         "sfneal/redis-helpers": ">=0.4.0",
         "sfneal/string-helpers": ">=0.2.0",
         "spatie/laravel-view-models": ">=1.0"
