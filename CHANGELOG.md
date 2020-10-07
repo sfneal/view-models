@@ -23,4 +23,4 @@ All notable changes to `view-models` will be documented in this file
 
 
 ## 0.3.0 - 2020-10-07
-- add support for php 7.0-7.1 & Laravel 5
+- add support for php 7.1 & Laravel 5
