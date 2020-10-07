@@ -24,3 +24,7 @@ All notable changes to `view-models` will be documented in this file
 
 ## 0.3.0 - 2020-10-07
 - add support for php 7.1 & Laravel 5
+
+
+## 0.3.1 - 2020-10-07
+- bump sfneal/string-helpers min version to prevent conflicts with sfneal/array-helpers
