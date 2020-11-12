@@ -1,6 +1,6 @@
 {
     "name": "sfneal/view-models",
-    "description": "Boilerplate for PHP package repo's",
+    "description": "spatie/view-models wrapper with built in response caching.",
     "keywords": [
         "sfneal",
         "view-models"
