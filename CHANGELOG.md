@@ -28,3 +28,8 @@ All notable changes to `view-models` will be documented in this file
 
 ## 0.3.1 - 2020-10-07
 - bump sfneal/string-helpers min version to prevent conflicts with sfneal/array-helpers
+
+
+## 0.3.2 - 2020-12-04
+- optimize Travis CI test suite
+- add support for php8
