@@ -33,3 +33,7 @@ All notable changes to `view-models` will be documented in this file
 ## 0.3.2 - 2020-12-04
 - optimize Travis CI test suite
 - add support for php8
+
+
+## 0.3.3 - 2020-12-11
+- fix support for php8
