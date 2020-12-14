@@ -37,3 +37,7 @@ All notable changes to `view-models` will be documented in this file
 
 ## 0.3.3 - 2020-12-11
 - fix support for php8
+
+
+## 0.3.4 - 2020-12-14
+- add improved type hinting
