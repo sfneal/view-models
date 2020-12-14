@@ -9,7 +9,7 @@ trait FormStatus
      *
      * @return $this
      */
-    public function withSuccess()
+    public function withSuccess(): self
     {
         $this->withStatus('success');
 
@@ -21,7 +21,7 @@ trait FormStatus
      *
      * @return $this
      */
-    public function withFailure()
+    public function withFailure(): self
     {
         $this->withStatus('failure');
 
@@ -34,7 +34,7 @@ trait FormStatus
      * @param string $status
      * @return $this
      */
-    private function withStatus(string $status)
+    private function withStatus(string $status): self
     {
         $this->status = $status;
 
