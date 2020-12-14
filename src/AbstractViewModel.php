@@ -35,7 +35,7 @@ abstract class AbstractViewModel extends ViewModel
      *
      * @return string
      */
-    private function __render()
+    private function __render(): string
     {
         return View::make($this->view, $this->toArray())->render();
     }
@@ -83,7 +83,7 @@ abstract class AbstractViewModel extends ViewModel
      * @param string $redis_key
      * @return $this
      */
-    public function setRedisKey(string $redis_key)
+    public function setRedisKey(string $redis_key): self
     {
         $this->redis_key = $redis_key;
 
@@ -95,9 +95,9 @@ abstract class AbstractViewModel extends ViewModel
      *
      * @param string|null $view
      * @param int|null $ttl
-     * @return Response|string|mixed
+     * @return string
      */
-    public function render(string $view = null, int $ttl = null)
+    public function render(string $view = null, int $ttl = null): string
     {
         // Set $view if it is not null
         if ($view) {
@@ -131,7 +131,7 @@ abstract class AbstractViewModel extends ViewModel
      *
      * @return $this
      */
-    public function invalidateCache()
+    public function invalidateCache(): self
     {
         RedisCache::delete('views:'.$this->view);
 
@@ -144,7 +144,7 @@ abstract class AbstractViewModel extends ViewModel
      * @param string $string
      * @return $this
      */
-    public function viewWithPrefix(string $string)
+    public function viewWithPrefix(string $string): self
     {
         $this->view = $this->prefix.$string;
 
@@ -171,10 +171,10 @@ abstract class AbstractViewModel extends ViewModel
      *  - 3. application default cache ttl.
      *
      * @param int|null $ttl
-     * @return int|mixed
+     * @return int
      */
-    private function getTTL(int $ttl = null)
+    private function getTTL(int $ttl = null): int
     {
-        return $ttl ?? $this->ttl ?? env('REDIS_KEY_EXPIRATION');
+        return intval($ttl ?? $this->ttl ?? env('REDIS_KEY_EXPIRATION'));
     }
 }
