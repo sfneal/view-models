@@ -18,9 +18,7 @@ trait DateSetter
     {
         if (! is_null($day = $request->input($key))) {
             return self::getDatetime($day, $time);
-        }
-
-        else {
+        } else {
             return null;
         }
     }
