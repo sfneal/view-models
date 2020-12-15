@@ -41,3 +41,7 @@ All notable changes to `view-models` will be documented in this file
 
 ## 0.3.4 - 2020-12-14
 - add improved type hinting
+
+
+## 0.3.5 - 2020-12-15
+- fix issue with 'none' return type in setDay method()
