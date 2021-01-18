@@ -177,4 +177,16 @@ abstract class AbstractViewModel extends ViewModel
     {
         return intval($ttl ?? $this->ttl ?? env('REDIS_KEY_EXPIRATION'));
     }
+
+    /**
+     * Set the $ttl property during runtime
+     *
+     * @param int $ttl
+     * @return $this
+     */
+    public function setTTL(int $ttl): self
+    {
+        $this->ttl = $ttl;
+        return $this;
+    }
 }
