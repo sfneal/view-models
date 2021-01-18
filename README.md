@@ -1,7 +1,8 @@
 # View Models
 
+[![Packagist PHP support](https://img.shields.io/packagist/php-v/sfneal/view-models)](https://packagist.org/packages/sfneal/view-models)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/sfneal/view-models.svg?style=flat-square)](https://packagist.org/packages/sfneal/view-models)
-[![Build Status](https://img.shields.io/travis/sfneal/view-models/master.svg?style=flat-square)](https://travis-ci.org/sfneal/view-models)
+[![Build Status](https://travis-ci.com/sfneal/view-models.svg?branch=master&style=flat-square)](https://travis-ci.com/sfneal/view-models)
 [![Quality Score](https://img.shields.io/scrutinizer/g/sfneal/view-models.svg?style=flat-square)](https://scrutinizer-ci.com/g/sfneal/view-models)
 [![Total Downloads](https://img.shields.io/packagist/dt/sfneal/view-models.svg?style=flat-square)](https://packagist.org/packages/sfneal/view-models)
 
