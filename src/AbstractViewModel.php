@@ -179,7 +179,7 @@ abstract class AbstractViewModel extends ViewModel
     }
 
     /**
-     * Set the $ttl property during runtime
+     * Set the $ttl property during runtime.
      *
      * @param int $ttl
      * @return $this
@@ -187,6 +187,7 @@ abstract class AbstractViewModel extends ViewModel
     public function setTTL(int $ttl): self
     {
         $this->ttl = $ttl;
+
         return $this;
     }
 }
