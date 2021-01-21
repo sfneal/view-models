@@ -6,6 +6,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\View;
 use RuntimeException;
 use Sfneal\Helpers\Redis\RedisCache;
+use Sfneal\Helpers\Strings\StringHelpers;
 use Spatie\ViewModels\ViewModel;
 
 abstract class AbstractViewModel extends ViewModel
@@ -53,7 +54,7 @@ abstract class AbstractViewModel extends ViewModel
             // Find the 'login_web' session key that holds the authenticated user_id value
             // If there's no key containing 'login_web' the user is not logged in
             $session_key = collect(request()->session()->all())->keys()->filter(function ($key) {
-                return is_string($key) && inString($key, 'login_web');
+                return is_string($key) && (new StringHelpers($key))->inString('login_web');
             })->first();
         } catch (RuntimeException $runtimeException) {
             // request and/or session is not set (called from a job)
