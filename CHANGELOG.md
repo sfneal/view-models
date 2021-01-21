@@ -47,5 +47,9 @@ All notable changes to `view-models` will be documented in this file
 - fix issue with 'none' return type in setDay method()
 
 
-## 0.3.6 - 2020-01-18
+## 0.3.6 - 2021-01-18
 - add setTTL() method to AbstractViewModel for setting $ttl property during runtime
+
+
+## 0.3.7 - 2021-01-21
+- fix use of inString helper function with import of StringHelpers
