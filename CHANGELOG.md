@@ -53,3 +53,8 @@ All notable changes to `view-models` will be documented in this file
 
 ## 0.3.7 - 2021-01-21
 - fix use of inString helper function with import of StringHelpers
+
+
+## 0.4.0 - 2021-01-26
+- bump min sfneal/redis-helpers & sfneal/string-helpers composer version to 1.0
+- add badges to readme
