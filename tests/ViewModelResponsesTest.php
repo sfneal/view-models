@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\ViewModels\Tests;
-
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
