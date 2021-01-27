@@ -18,9 +18,54 @@ composer require sfneal/view-models
 ```
 
 ## Usage
+A view model is a class where you can put some complex logic for your views. This will make your controllers a bit
+lighter. You can create a view model by extending the provided Sfneal\ViewModels\AbstractViewModel.
 
-``` php
-// Usage description here
+```php
+use Sfneal\ViewModels\AbstractViewModel;
+
+class PostViewModel extends AbstractViewModel
+{
+    public $indexUrl = null;
+   
+
+    public function __construct(User $user, Post $post = null)
+    {
+        $this->user = $user;
+        $this->post = $post;
+        
+        $this->indexUrl = action([PostsController::class, 'index']);
+        $this->view = 'your.view'; 
+    }
+    
+    public function post(): Post
+    {
+        return $this->post ?? new Post();
+    }
+    
+    public function categories(): Collection
+    {
+        return Category::canBeUsedBy($this->user)->get();
+    }
+}
+```
+
+And used in controllers like so:
+```php
+class PostsController
+{
+    public function create()
+    {
+        // Uses caching for fast load times after first request
+        return (new PostViewModel(current_user()))->render();
+    }
+    
+    public function edit(Post $post)
+    {
+        // Doesn't use caching to avoid need for cache invalidation on changes
+        return (new PostViewModel(current_user(), $post))->renderNoCache();
+    }
+}
 ```
 
 ### Testing
