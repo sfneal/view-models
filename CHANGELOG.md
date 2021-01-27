@@ -67,3 +67,8 @@ All notable changes to `view-models` will be documented in this file
 
 ## 0.4.2 - 2021-01-27
 - fix min spatie/laravel-view-models composer package version
+
+
+## 1.0.0 - 2021-01-27
+- initial production release
+- update documentation
