@@ -58,3 +58,8 @@ All notable changes to `view-models` will be documented in this file
 ## 0.4.0 - 2021-01-26
 - bump min sfneal/redis-helpers & sfneal/string-helpers composer version to 1.0
 - add badges to readme
+
+
+## 0.4.1 - 2021-01-27
+- refactor test suite (brought in several from spatie/laravel-view-models)
+- add use of redis-helpers 'ttl' config key instead of env() helper method
