@@ -176,7 +176,7 @@ abstract class AbstractViewModel extends ViewModel
      */
     private function getTTL(int $ttl = null): int
     {
-        return intval($ttl ?? $this->ttl ?? env('REDIS_KEY_EXPIRATION'));
+        return intval($ttl ?? $this->ttl ?? config('redis-helpers.ttl'));
     }
 
     /**
