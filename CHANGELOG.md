@@ -63,3 +63,7 @@ All notable changes to `view-models` will be documented in this file
 ## 0.4.1 - 2021-01-27
 - refactor test suite (brought in several from spatie/laravel-view-models)
 - add use of redis-helpers 'ttl' config key instead of env() helper method
+
+
+## 0.4.2 - 2021-01-27
+- fix min spatie/laravel-view-models composer package version

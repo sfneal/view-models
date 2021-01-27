@@ -19,7 +19,7 @@
         "php": ">=7.1",
         "sfneal/redis-helpers": ">=1.0.0",
         "sfneal/string-helpers": ">=1.0.0",
-        "spatie/laravel-view-models": ">=1.0"
+        "spatie/laravel-view-models": ">=1.1"
     },
     "require-dev": {
         "phpunit/phpunit": ">=7.5.20",
