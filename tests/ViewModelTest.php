@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\ViewModels\Tests;
-
 
 use Sfneal\ViewModels\AbstractViewModel;
 use Sfneal\ViewModels\Tests\Mocks\TestViewModel;
