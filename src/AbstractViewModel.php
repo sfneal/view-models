@@ -48,6 +48,7 @@ abstract class AbstractViewModel extends ViewModel
      * Retrieve the authenticated user's ID from the session.
      *
      *  - avoid executing database query
+     *  // todo: make this optional, we dont always want to tag cached pages by user
      *
      * @return int
      */
