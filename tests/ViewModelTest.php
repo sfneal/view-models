@@ -17,8 +17,21 @@ class ViewModelTest extends TestCase
         $this->viewModel = new TestViewModel();
     }
 
-    public function test_render_method_exists()
+    public function test_rendering()
     {
         $this->assertIsString($this->viewModel->render('test'));
+    }
+
+    public function test_rendering_no_cache()
+    {
+        $this->assertIsString($this->viewModel->renderNoCache('test'));
+    }
+
+    public function test_rendering_no_cache_vs_cache()
+    {
+        $this->assertEquals(
+            $this->viewModel->renderNoCache('test'),
+            $this->viewModel->render('test')
+        );
     }
 }
