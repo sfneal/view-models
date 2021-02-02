@@ -71,10 +71,10 @@ abstract class AbstractViewModel extends ViewModel
     /**
      * Retrieve a unique redis key for caching the view.
      *
-     * // todo: refactor name
+     * // todo: add property?
      * @return string
      */
-    private function redisViewKey(): string
+    public function cacheKey(): string
     {
         return 'views'.
             ':'.$this->view.
@@ -110,7 +110,7 @@ abstract class AbstractViewModel extends ViewModel
         }
 
         // Cache the View if it doesn't exist
-        return RedisCache::remember($this->redisViewKey(), $this->getTTL($ttl), function () {
+        return RedisCache::remember($this->cacheKey(), $this->getTTL($ttl), function () {
             return $this->__render();
         });
     }
@@ -150,7 +150,7 @@ abstract class AbstractViewModel extends ViewModel
      */
     public function isCached(): bool
     {
-        return RedisCache::exists($this->redisViewKey());
+        return RedisCache::exists($this->cacheKey());
     }
 
     /**
