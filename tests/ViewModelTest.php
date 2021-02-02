@@ -63,6 +63,6 @@ class ViewModelTest extends TestCase
         $this->viewModel->render();
         $cacheKey = $this->viewModel->cacheKey();
         $this->assertIsString($cacheKey);
-        $this->assertEquals($cacheKey, 'views:test#0#http://localhost');
+        $this->assertEquals('views:test#0#http://localhost', $cacheKey);
     }
 }
