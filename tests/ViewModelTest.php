@@ -49,4 +49,11 @@ class ViewModelTest extends TestCase
         $this->viewModel->render('test');
         $this->assertTrue($this->viewModel->isCached());
     }
+
+    public function test_cache_invalidation()
+    {
+        $this->viewModel->render('test');
+        $this->viewModel->invalidateCache();
+        $this->assertFalse($this->viewModel->isCached());
+    }
 }
