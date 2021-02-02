@@ -12,6 +12,7 @@ use Spatie\ViewModels\ViewModel;
 abstract class AbstractViewModel extends ViewModel
 {
     // todo: add isCached method
+    // todo: make more properties private and add getters/setters
 
     /**
      * @var int Time to live
@@ -176,7 +177,7 @@ abstract class AbstractViewModel extends ViewModel
      * @param int|null $ttl
      * @return int
      */
-    private function getTTL(int $ttl = null): int
+    public function getTTL(int $ttl = null): int
     {
         return intval($ttl ?? $this->ttl ?? config('redis-helpers.ttl'));
     }
@@ -193,4 +194,6 @@ abstract class AbstractViewModel extends ViewModel
 
         return $this;
     }
+
+    // todo: fix issues with getTTL & setTTL methods
 }

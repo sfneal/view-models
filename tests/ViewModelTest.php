@@ -34,4 +34,13 @@ class ViewModelTest extends TestCase
             $this->viewModel->render('test')
         );
     }
+
+    public function test_rendering_ttl()
+    {
+        $this->viewModel->render('test');
+        $ttl = $this->viewModel->getTTL();
+
+        $this->assertIsInt($ttl);
+        $this->assertEquals(config('redis-helpers.ttl'), $ttl);
+    }
 }
