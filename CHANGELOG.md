@@ -72,3 +72,7 @@ All notable changes to `view-models` will be documented in this file
 ## 1.0.0 - 2021-01-27
 - initial production release
 - update documentation
+
+
+## 1.1.0 - 2021-02-02
+- bump min sfneal/redis-helpers version
