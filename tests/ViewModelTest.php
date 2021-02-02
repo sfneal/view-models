@@ -43,4 +43,10 @@ class ViewModelTest extends TestCase
         $this->assertIsInt($ttl);
         $this->assertEquals(config('redis-helpers.ttl'), $ttl);
     }
+
+    public function test_caching()
+    {
+        $this->viewModel->render('test');
+        $this->assertTrue($this->viewModel->isCached());
+    }
 }

@@ -71,6 +71,7 @@ abstract class AbstractViewModel extends ViewModel
     /**
      * Retrieve a unique redis key for caching the view.
      *
+     * // todo: refactor name
      * @return string
      */
     private function redisViewKey(): string
@@ -140,6 +141,16 @@ abstract class AbstractViewModel extends ViewModel
         RedisCache::delete('views:'.$this->view);
 
         return $this;
+    }
+
+    /**
+     * Determine if the ViewModel has been cached.
+     *
+     * @return bool
+     */
+    public function isCached(): bool
+    {
+        return RedisCache::exists($this->redisViewKey());
     }
 
     /**
