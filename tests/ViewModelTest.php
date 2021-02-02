@@ -17,8 +17,7 @@ class ViewModelTest extends TestCase
         $this->viewModel = new TestViewModel();
     }
 
-    /** @test */
-    public function render_method_exists()
+    public function test_render_method_exists()
     {
         $this->assertIsString($this->viewModel->render('test'));
     }
