@@ -142,8 +142,7 @@ abstract class AbstractViewModel extends ViewModel
      */
     public function invalidateCache($children = true): self
     {
-        RedisCache::delete($children ? 'views:'.$this->view : $this->cacheKey());
-
+        RedisCache::delete($children ? 'views:'.$this->view : $this->cacheKey(), $children);
         return $this;
     }
 

@@ -2,6 +2,7 @@
 
 namespace Sfneal\ViewModels\Tests;
 
+use Sfneal\Helpers\Redis\RedisCache;
 use Sfneal\ViewModels\Tests\Mocks\TestViewModel;
 
 class ViewModelViewsTest extends TestCase
@@ -46,5 +47,23 @@ class ViewModelViewsTest extends TestCase
         $this->assertFalse($this->viewModels[3]->isCached());
         $this->assertFalse($this->viewModels[4]->isCached());
         $this->assertFalse($this->viewModels[5]->isCached());
+    }
+
+    public function test_deleting_single_view_child()
+    {
+        $this->viewModels[4]->invalidateCache(false);
+
+        $this->assertFalse($this->viewModels[4]->isCached());
+        $this->assertTrue($this->viewModels[3]->isCached());
+        $this->assertTrue($this->viewModels[5]->isCached());
+    }
+
+    public function test_deleting_single_view_parent()
+    {
+        $this->viewModels[3]->invalidateCache(false);
+
+        $this->assertFalse($this->viewModels[3]->isCached());
+        $this->assertTrue($this->viewModels[4]->isCached());
+        $this->assertTrue($this->viewModels[5]->isCached());
     }
 }
