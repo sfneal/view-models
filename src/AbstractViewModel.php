@@ -79,12 +79,14 @@ abstract class AbstractViewModel extends ViewModel
     {
         return 'views'.
             ':'.$this->view.
-            '#'.$this->userId().
-            '#'.(isset($this->redis_key) ? $this->redis_key : request()->fullUrl());
+            ':'.$this->userId().
+            ':'.(isset($this->redis_key) ? $this->redis_key : request()->fullUrl());
     }
 
     /**
      * Set an override Redis Key.
+     *
+     * // todo: refactor this
      *
      * @param string $redis_key
      * @return $this
@@ -135,11 +137,12 @@ abstract class AbstractViewModel extends ViewModel
     /**
      * Invalidate the View Cache for this ViewModel.
      *
+     * @param bool $children
      * @return $this
      */
-    public function invalidateCache(): self
+    public function invalidateCache($children = true): self
     {
-        RedisCache::delete('views:'.$this->view);
+        RedisCache::delete($children ? 'views:'.$this->view : $this->cacheKey());
 
         return $this;
     }
