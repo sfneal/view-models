@@ -2,7 +2,6 @@
 
 namespace Sfneal\ViewModels\Tests;
 
-use Sfneal\Helpers\Redis\RedisCache;
 use Sfneal\ViewModels\Tests\Mocks\TestViewModel;
 
 class ViewModelViewsTest extends TestCase
