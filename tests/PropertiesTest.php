@@ -5,7 +5,7 @@ namespace Sfneal\ViewModels\Tests;
 use Sfneal\ViewModels\AbstractViewModel;
 use Sfneal\ViewModels\Tests\Mocks\TestViewModel;
 
-class ViewModelPropertiesTest extends TestCase
+class PropertiesTest extends TestCase
 {
     /** @var AbstractViewModel */
     protected $viewModel;

@@ -7,7 +7,7 @@ use Illuminate\Http\Response;
 use Sfneal\ViewModels\AbstractViewModel;
 use Sfneal\ViewModels\Tests\Mocks\TestViewModel;
 
-class ViewModelResponsesTest extends TestCase
+class ResponsesTest extends TestCase
 {
     /** @var AbstractViewModel */
     protected $viewModel;
