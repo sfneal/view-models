@@ -11,6 +11,8 @@ use Spatie\ViewModels\ViewModel;
 
 abstract class AbstractViewModel extends ViewModel
 {
+    // todo: add isCached method
+
     /**
      * @var int Time to live
      */
