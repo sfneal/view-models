@@ -11,7 +11,6 @@ use Spatie\ViewModels\ViewModel;
 
 abstract class AbstractViewModel extends ViewModel
 {
-    // todo: add isCached method
     // todo: make more properties private and add getters/setters
 
     /**
@@ -20,7 +19,7 @@ abstract class AbstractViewModel extends ViewModel
     public $ttl = null;
 
     /**
-     * @var string Use manually declare redis_key (warning: can cause issues with caching)
+     * @var string|null Use manually declare redis_key (warning: can cause issues with caching)
      */
     public $redis_key = null;
 
@@ -30,7 +29,7 @@ abstract class AbstractViewModel extends ViewModel
     public $prefix;
 
     /**
-     * @var null View name
+     * @var string|null View name
      */
     public $view = null;
 

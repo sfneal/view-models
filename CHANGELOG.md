@@ -75,7 +75,11 @@ All notable changes to `view-models` will be documented in this file
 
 
 ## 1.1.0 - 2021-02-02
-- fix issue with cache invalidation leading to rendered ViewModels not being deleted
 - add improved test suite to that tests caching
 - refactor several private AbstractViewModel methods to public facing methods
 - bump min sfneal/redis-helpers version
+- fix issue with cache invalidation leading to rendered ViewModels not being deleted
+
+
+## 1.1.1 - 2021-02-04
+- fix AbstractViewModel::$view property type hinting
