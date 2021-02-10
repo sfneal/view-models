@@ -5,7 +5,7 @@ namespace Sfneal\ViewModels;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\View;
 use RuntimeException;
-use Sfneal\Caching\Traits\Cacheable;
+use Sfneal\Caching\Traits\IsCacheable;
 use Sfneal\Helpers\Redis\RedisCache;
 use Sfneal\Helpers\Strings\StringHelpers;
 use Spatie\ViewModels\ViewModel;
@@ -13,7 +13,7 @@ use Spatie\ViewModels\ViewModel;
 abstract class AbstractViewModel extends ViewModel
 {
     // todo: make more properties private and add getters/setters
-    use Cacheable;
+    use IsCacheable;
 
     /**
      * @var int Time to live
