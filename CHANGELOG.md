@@ -83,3 +83,8 @@ All notable changes to `view-models` will be documented in this file
 
 ## 1.1.1 - 2021-02-04
 - fix AbstractViewModel::$view property type hinting
+
+
+## 1.1.2 - 2021-02-10
+- add sfneal/caching composer requirement to make use of IsCacheable trait
+- add use of IsCacheable trait in AbstractViewModel

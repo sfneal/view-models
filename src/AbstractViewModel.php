@@ -5,6 +5,7 @@ namespace Sfneal\ViewModels;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\View;
 use RuntimeException;
+use Sfneal\Caching\Traits\Cacheable;
 use Sfneal\Helpers\Redis\RedisCache;
 use Sfneal\Helpers\Strings\StringHelpers;
 use Spatie\ViewModels\ViewModel;
@@ -12,6 +13,7 @@ use Spatie\ViewModels\ViewModel;
 abstract class AbstractViewModel extends ViewModel
 {
     // todo: make more properties private and add getters/setters
+    use Cacheable;
 
     /**
      * @var int Time to live
@@ -144,16 +146,6 @@ abstract class AbstractViewModel extends ViewModel
         RedisCache::delete($children ? 'views:'.$this->view : $this->cacheKey(), $children);
 
         return $this;
-    }
-
-    /**
-     * Determine if the ViewModel has been cached.
-     *
-     * @return bool
-     */
-    public function isCached(): bool
-    {
-        return RedisCache::exists($this->cacheKey());
     }
 
     /**
