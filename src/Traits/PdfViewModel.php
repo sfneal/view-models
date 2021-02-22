@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\ViewModels\Traits;
-
 
 trait PdfViewModel
 {
