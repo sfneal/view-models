@@ -18,6 +18,7 @@
     "require": {
         "php": ">=7.1",
         "sfneal/caching": ">=1.2",
+        "sfneal/queueables": ">=1.0",
         "sfneal/redis-helpers": ">=1.2.1",
         "sfneal/string-helpers": ">=1.0.0",
         "spatie/laravel-view-models": ">=1.1"
