@@ -97,3 +97,4 @@ All notable changes to `view-models` will be documented in this file
 ## 2.0.0 - 2021-03-29
 - make PreCacheViewModel Job for caching ViewModels within the Job queue to provide faster response times
 - add sfneal/queueables to composer requirements
+- depreciated sfneal/view-model-precache package
