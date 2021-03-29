@@ -41,7 +41,7 @@ class TestCase extends OrchestraTestCase
             RedisHelpersServiceProvider::class,
             RedisMockServiceProvider::class,
             ViewModelsServiceProvider::class,
-            TestingServiceProvider::class
+            TestingServiceProvider::class,
         ];
     }
 
