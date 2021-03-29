@@ -92,3 +92,8 @@ All notable changes to `view-models` will be documented in this file
 
 ## 1.1.3 - 2021-02-22
 - make PdfViewModel trait for use in ViewModel's that can be used for PDF Exports
+
+
+## 2.0.0 - 2021-03-29
+- make PreCacheViewModel Job for caching ViewModels within the Job queue to provide faster response times
+- add sfneal/queueables to composer requirements
