@@ -9,6 +9,7 @@ use Lunaweb\RedisMock\Providers\RedisMockServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Sfneal\Helpers\Redis\Providers\RedisHelpersServiceProvider;
 use Sfneal\Helpers\Redis\RedisCache;
+use Sfneal\ViewModels\Tests\Providers\TestingServiceProvider;
 use Spatie\ViewModels\Providers\ViewModelsServiceProvider;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -40,6 +41,7 @@ class TestCase extends OrchestraTestCase
             RedisHelpersServiceProvider::class,
             RedisMockServiceProvider::class,
             ViewModelsServiceProvider::class,
+            TestingServiceProvider::class
         ];
     }
 
