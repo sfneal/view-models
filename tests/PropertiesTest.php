@@ -2,8 +2,8 @@
 
 namespace Sfneal\ViewModels\Tests;
 
-use Sfneal\ViewModels\ViewModel;
 use Sfneal\ViewModels\Tests\Mocks\TestViewModel;
+use Sfneal\ViewModels\ViewModel;
 
 class PropertiesTest extends TestCase
 {
