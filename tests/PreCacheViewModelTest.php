@@ -3,9 +3,9 @@
 namespace Sfneal\ViewModels\Tests;
 
 use Illuminate\Support\Facades\Queue;
-use Sfneal\ViewModels\ViewModel;
 use Sfneal\ViewModels\PreCacheViewModel;
 use Sfneal\ViewModels\Tests\Mocks\TestViewModel;
+use Sfneal\ViewModels\ViewModel;
 
 class PreCacheViewModelTest extends TestCase
 {

@@ -4,8 +4,8 @@ namespace Sfneal\ViewModels\Tests;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
-use Sfneal\ViewModels\ViewModel;
 use Sfneal\ViewModels\Tests\Mocks\TestViewModel;
+use Sfneal\ViewModels\ViewModel;
 
 class ResponsesTest extends TestCase
 {
