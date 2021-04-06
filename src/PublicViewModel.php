@@ -2,7 +2,7 @@
 
 namespace Sfneal\ViewModels;
 
-abstract class AbstractPublicViewModel extends AbstractViewModel
+abstract class PublicViewModel extends ViewModel
 {
     public $limit = null;
     public $learn_more = false;

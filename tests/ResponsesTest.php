@@ -4,12 +4,12 @@ namespace Sfneal\ViewModels\Tests;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
-use Sfneal\ViewModels\AbstractViewModel;
+use Sfneal\ViewModels\ViewModel;
 use Sfneal\ViewModels\Tests\Mocks\TestViewModel;
 
 class ResponsesTest extends TestCase
 {
-    /** @var AbstractViewModel */
+    /** @var ViewModel */
     protected $viewModel;
 
     protected function setUp(): void

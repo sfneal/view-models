@@ -3,13 +3,13 @@
 namespace Sfneal\ViewModels\Tests;
 
 use Illuminate\Support\Facades\Queue;
-use Sfneal\ViewModels\AbstractViewModel;
+use Sfneal\ViewModels\ViewModel;
 use Sfneal\ViewModels\PreCacheViewModel;
 use Sfneal\ViewModels\Tests\Mocks\TestViewModel;
 
 class PreCacheViewModelTest extends TestCase
 {
-    /** @var AbstractViewModel */
+    /** @var ViewModel */
     protected $viewModel;
 
     protected function setUp(): void
