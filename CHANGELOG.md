@@ -106,3 +106,7 @@ All notable changes to `view-models` will be documented in this file
 
 ## 2.1.0 - 2021-04-05
 - bump sfneal/queueables min version to ^2.0
+
+
+## 3.0.0 - 2021-04-06
+- refactor `AbstractViewModel` to `ViewModel`

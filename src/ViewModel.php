@@ -8,9 +8,9 @@ use RuntimeException;
 use Sfneal\Caching\Traits\IsCacheable;
 use Sfneal\Helpers\Redis\RedisCache;
 use Sfneal\Helpers\Strings\StringHelpers;
-use Spatie\ViewModels\ViewModel;
+use Spatie\ViewModels\ViewModel as SpatieViewModel;
 
-abstract class AbstractViewModel extends ViewModel
+abstract class ViewModel extends SpatieViewModel
 {
     // todo: make more properties private and add getters/setters
     use IsCacheable;

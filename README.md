@@ -22,9 +22,9 @@ A view model is a class where you can put some complex logic for your views. Thi
 lighter. You can create a view model by extending the provided Sfneal\ViewModels\AbstractViewModel.
 
 ```php
-use Sfneal\ViewModels\AbstractViewModel;
+use Sfneal\ViewModels\ViewModel;
 
-class PostViewModel extends AbstractViewModel
+class PostViewModel extends ViewModel
 {
     public $indexUrl = null;
    

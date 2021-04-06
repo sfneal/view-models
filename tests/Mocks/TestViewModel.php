@@ -2,10 +2,10 @@
 
 namespace Sfneal\ViewModels\Tests\Mocks;
 
-use Sfneal\ViewModels\AbstractViewModel;
+use Sfneal\ViewModels\ViewModel;
 use stdClass;
 
-class TestViewModel extends AbstractViewModel
+class TestViewModel extends ViewModel
 {
     public $property = 'abc';
 

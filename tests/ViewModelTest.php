@@ -2,12 +2,12 @@
 
 namespace Sfneal\ViewModels\Tests;
 
-use Sfneal\ViewModels\AbstractViewModel;
 use Sfneal\ViewModels\Tests\Mocks\TestViewModel;
+use Sfneal\ViewModels\ViewModel;
 
 class ViewModelTest extends TestCase
 {
-    /** @var AbstractViewModel */
+    /** @var ViewModel */
     protected $viewModel;
 
     protected function setUp(): void

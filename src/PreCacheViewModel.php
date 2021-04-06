@@ -17,7 +17,7 @@ class PreCacheViewModel extends Job
     public $queue = 'cache';
 
     /**
-     * @var AbstractViewModel
+     * @var ViewModel
      */
     private $viewModel;
 
