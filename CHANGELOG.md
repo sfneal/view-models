@@ -113,4 +113,5 @@ All notable changes to `view-models` will be documented in this file
 
  
 ## 3.0.1 - 2021-09-01
+- optimize Travis CI config & add code coverage uploading
 - add support for sfneal/caching v2.0
