@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": ">=7.1",
-        "sfneal/caching": ">=1.2",
+        "sfneal/caching": "^1.2|v2.0",
         "sfneal/queueables": "^2.0",
         "sfneal/redis-helpers": ">=1.2.1",
         "sfneal/string-helpers": ">=1.0.0",
@@ -27,6 +27,7 @@
         "josiasmontag/laravel-redis-mock": ">=1.2.6",
         "orchestra/testbench": ">=3.8.0",
         "phpunit/phpunit": ">=6.5.14",
+        "scrutinizer/ocular": "^1.8",
         "ext-json": "*"
     },
     "autoload": {
@@ -42,6 +43,7 @@
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "upload-coverage": "php vendor/bin/ocular code-coverage:upload --format=php-clover phpunit.xml.dist",
         "update-test": "composer --prefer-stable update && composer test && composer update --prefer-lowest && composer test && composer update"
     },
     "config": {
