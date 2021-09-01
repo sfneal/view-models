@@ -119,3 +119,4 @@ All notable changes to `view-models` will be documented in this file
 
 ## 3.0.2 - 2021-09-01
 - add support for sfneal/redis-helpers v2.0
+- cut use of `RedisCache::remember()` method
