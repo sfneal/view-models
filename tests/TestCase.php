@@ -4,6 +4,7 @@ namespace Sfneal\ViewModels\Tests;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\View;
 use Lunaweb\RedisMock\Providers\RedisMockServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
@@ -64,7 +65,7 @@ class TestCase extends OrchestraTestCase
      */
     protected function tearDown(): void
     {
-        RedisCache::flush();
+        Cache::flush();
         parent::tearDown();
     }
 
