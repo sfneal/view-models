@@ -4,11 +4,11 @@ namespace Sfneal\ViewModels\Tests;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\View;
 use Lunaweb\RedisMock\Providers\RedisMockServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Sfneal\Helpers\Redis\Providers\RedisHelpersServiceProvider;
-use Sfneal\Helpers\Redis\RedisCache;
 use Sfneal\ViewModels\Tests\Providers\TestingServiceProvider;
 use Spatie\ViewModels\Providers\ViewModelsServiceProvider;
 use Symfony\Component\HttpFoundation\Response;
@@ -64,7 +64,7 @@ class TestCase extends OrchestraTestCase
      */
     protected function tearDown(): void
     {
-        RedisCache::flush();
+        Cache::flush();
         parent::tearDown();
     }
 
