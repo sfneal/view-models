@@ -23,6 +23,8 @@ class TestCase extends OrchestraTestCase
      */
     protected function getEnvironmentSetUp($app)
     {
+        parent::getEnvironmentSetUp($app);
+
         $app['config']->set('app.debug', true);
         $app['config']->set('database.redis.client', 'mock');
         $app['config']->set('cache.default', 'redis');

@@ -9,11 +9,13 @@ use RuntimeException;
 use Sfneal\Caching\Traits\IsCacheable;
 use Sfneal\Helpers\Redis\RedisCache;
 use Sfneal\Helpers\Strings\StringHelpers;
+use Sfneal\ViewModels\Traits\CachingPreferences;
 use Spatie\ViewModels\ViewModel as SpatieViewModel;
 
 abstract class ViewModel extends SpatieViewModel
 {
     // todo: make more properties private and add getters/setters
+    use CachingPreferences;
     use IsCacheable;
 
     /**
@@ -109,6 +111,11 @@ abstract class ViewModel extends SpatieViewModel
      */
     public function render(string $view = null, int $ttl = null): string
     {
+        // Don't cache if caching has been disabled
+        if ($this->cachingDisabled) {
+            return $this->renderNoCache($view);
+        }
+
         // Set $view if it is not null
         if ($view) {
             $this->view = $view;

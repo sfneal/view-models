@@ -120,3 +120,9 @@ All notable changes to `view-models` will be documented in this file
 ## 3.0.2 - 2021-09-01
 - add support for sfneal/redis-helpers v2.0
 - cut use of `RedisCache::remember()` method
+
+
+## 3.1.0 - 2021-09-24
+- make `CachingPreferences` trait that's used by `ViewModel` for conditionally disabling caching in different app environments
+- add `dontCacheInDevelopment()`, `dontCacheInProduction()` & `dontCacheIf()` methods to `CachingPreferences` & `ViewModel`
+- add sfneal/laravel-helpers composer requirement for checking app env
