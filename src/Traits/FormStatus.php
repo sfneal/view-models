@@ -31,7 +31,7 @@ trait FormStatus
     /**
      * Set a Client Inquiry success/failure status to be displayed in the view model.
      *
-     * @param string $status
+     * @param  string  $status
      * @return $this
      */
     private function withStatus(string $status): self

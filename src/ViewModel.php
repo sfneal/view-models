@@ -77,6 +77,7 @@ abstract class ViewModel extends SpatieViewModel
      * Retrieve a unique redis key for caching the view.
      *
      * // todo: add property?
+     *
      * @return string
      */
     public function cacheKey(): string
@@ -92,7 +93,7 @@ abstract class ViewModel extends SpatieViewModel
      *
      * // todo: refactor this
      *
-     * @param string $redis_key
+     * @param  string  $redis_key
      * @return $this
      */
     public function setRedisKey(string $redis_key): self
@@ -105,8 +106,8 @@ abstract class ViewModel extends SpatieViewModel
     /**
      * Retrieve/render the ViewModel from/to the application cache.
      *
-     * @param string|null $view
-     * @param int|null $ttl
+     * @param  string|null  $view
+     * @param  int|null  $ttl
      * @return string
      */
     public function render(string $view = null, int $ttl = null): string
@@ -130,7 +131,7 @@ abstract class ViewModel extends SpatieViewModel
     /**
      * Render the ViewModel without storing or retrieving from the Cache.
      *
-     * @param string|null $view
+     * @param  string|null  $view
      * @return Response|string|mixed
      */
     public function renderNoCache(string $view = null)
@@ -146,7 +147,7 @@ abstract class ViewModel extends SpatieViewModel
     /**
      * Invalidate the View Cache for this ViewModel.
      *
-     * @param bool $children
+     * @param  bool  $children
      * @return $this
      */
     public function invalidateCache($children = true): self
@@ -159,7 +160,7 @@ abstract class ViewModel extends SpatieViewModel
     /**
      * Return a concatenated route or view name by using the PREFIX const.
      *
-     * @param string $string
+     * @param  string  $string
      * @return $this
      */
     public function viewWithPrefix(string $string): self
@@ -172,7 +173,7 @@ abstract class ViewModel extends SpatieViewModel
     /**
      * Extend a view name.
      *
-     * @param string $string
+     * @param  string  $string
      * @return $this
      */
     public function viewExtend(string $string): self
@@ -188,7 +189,7 @@ abstract class ViewModel extends SpatieViewModel
      *  - 2. initialized $this->ttl property
      *  - 3. application default cache ttl.
      *
-     * @param int|null $ttl
+     * @param  int|null  $ttl
      * @return int
      */
     public function getTTL(int $ttl = null): int
@@ -199,7 +200,7 @@ abstract class ViewModel extends SpatieViewModel
     /**
      * Set the $ttl property during runtime.
      *
-     * @param int $ttl
+     * @param  int  $ttl
      * @return $this
      */
     public function setTTL(int $ttl): self
