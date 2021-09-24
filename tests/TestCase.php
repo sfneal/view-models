@@ -18,11 +18,13 @@ class TestCase extends OrchestraTestCase
     /**
      * Define environment setup.
      *
-     * @param Application $app
+     * @param  Application  $app
      * @return void
      */
     protected function getEnvironmentSetUp($app)
     {
+        parent::getEnvironmentSetUp($app);
+
         $app['config']->set('app.debug', true);
         $app['config']->set('database.redis.client', 'mock');
         $app['config']->set('cache.default', 'redis');
@@ -32,7 +34,7 @@ class TestCase extends OrchestraTestCase
     /**
      * Register package service providers.
      *
-     * @param Application $app
+     * @param  Application  $app
      * @return array|string
      */
     protected function getPackageProviders($app)
