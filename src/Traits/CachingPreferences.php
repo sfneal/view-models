@@ -14,7 +14,7 @@ trait CachingPreferences
     /**
      * Disable ViewModel render caching if the conditional evaluates as true.
      *
-     * @param bool $conditional
+     * @param  bool  $conditional
      * @return $this
      */
     public function dontCacheIf(bool $conditional): self
