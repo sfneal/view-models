@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+    view-models:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: "stephenneal/view-models:${TAG}"
+        env_file: .env.docker
+        container_name: view-models
+        tty: true
+        volumes:
+            - view-models:/var/www
+        depends_on:
+            - view-models-cache
+        networks:
+            - view-models-network
+
+    view-models-cache:
+        container_name: view-models-cache
+        image: redis:6-alpine
+        command: ["redis-server", "--appendonly yes", "--port 9576"]
+        ports:
+            - "9576:9576"
+        volumes:
+            - view-models-cache:/data
+        networks:
+            - view-models-network
+
+
+# Networks
+networks:
+    view-models-network:
+        driver: bridge
+
+# Volumes
+volumes:
+    view-models:
+    view-models-cache:
