@@ -131,3 +131,4 @@ All notable changes to `view-models` will be documented in this file
 ## 4.0.0 - 2022-03-01
 - cut support for PHP7.2 & below
 - add use of GitHub actions
+- add support for sfneal/caching version v3.0
