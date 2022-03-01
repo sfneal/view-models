@@ -126,3 +126,8 @@ All notable changes to `view-models` will be documented in this file
 - make `CachingPreferences` trait that's used by `ViewModel` for conditionally disabling caching in different app environments
 - add `dontCacheInDevelopment()`, `dontCacheInProduction()` & `dontCacheIf()` methods to `CachingPreferences` & `ViewModel`
 - add sfneal/laravel-helpers composer requirement for checking app env
+
+
+## 4.0.0 - 2022-03-01
+- cut support for PHP7.2 & below
+- add use of GitHub actions
