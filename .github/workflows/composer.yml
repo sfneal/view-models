@@ -14,8 +14,14 @@ jobs:
                 php: [7.3, 7.4, 8.0, 8.1]
                 dependency-version: [prefer-lowest, prefer-stable]
                 dev-dependencies: [dev, no-dev]
+                include:
+                    -   laravel: 9.*
+                    -   laravel: 8.*
+                exclude:
+                    -   laravel: 9.*
+                        php: [7.3, 7.4]
 
-        name: PHP ${{ matrix.php }} - ${{ matrix.dependency-version }} - ${{ matrix.dev-dependencies }}
+        name: PHP ${{ matrix.php }} - L ${{ matrix.laravel }} - ${{ matrix.dependency-version }} - ${{ matrix.dev-dependencies }}
 
         steps:
             -   name: Checkout code
@@ -29,5 +35,6 @@ jobs:
 
             -   name: Install Composer Dependencies
                 run: |
+                    composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
                     composer update --${{ matrix.dev-dependencies }} --${{ matrix.dependency-version }} --prefer-dist --no-interaction
 
