@@ -5,7 +5,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-        image: "stephenneal/view-models:${TAG}"
+        image: "stephenneal/view-models:latest"
         env_file: .env.docker
         container_name: view-models
         tty: true
