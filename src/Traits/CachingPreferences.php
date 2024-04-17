@@ -9,7 +9,7 @@ trait CachingPreferences
     /**
      * @var bool Determine if caching has been disabled.
      */
-    protected $cachingDisabled = false;
+    protected bool $cachingDisabled = false;
 
     /**
      * Disable ViewModel render caching if the conditional evaluates as true.

@@ -7,7 +7,7 @@ trait PdfViewModel
     /**
      * @var bool
      */
-    public $forPdf = false;
+    public bool $forPdf = false;
 
     /**
      * Declare this ViewModel is being used to create a PDF.
