@@ -138,3 +138,9 @@ All notable changes to `view-models` will be documented in this file
 - cut support for PHP 7
 - add use of new GitHub actions
 - add support for PHP 8.2 & 8.3
+
+
+## 5.1.0 - 2024-04-17
+- removed unused classes/files
+- add return type hinting
+- general code cleanup

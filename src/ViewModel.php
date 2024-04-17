@@ -2,9 +2,10 @@
 
 namespace Sfneal\ViewModels;
 
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\View;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 use RuntimeException;
 use Sfneal\Caching\Traits\IsCacheable;
 use Sfneal\Helpers\Redis\RedisCache;
@@ -19,19 +20,19 @@ abstract class ViewModel extends SpatieViewModel
     use IsCacheable;
 
     /**
-     * @var int Time to live
+     * @var int|null Time to live
      */
-    public $ttl = null;
+    public ?int $ttl = null;
 
     /**
      * @var string|null Use manually declare redis_key (warning: can cause issues with caching)
      */
-    public $redis_key = null;
+    public ?string $redis_key = null;
 
     /**
      * View Directory Prefix.
      */
-    public $prefix;
+    public string $prefix = '';
 
     /**
      * @var string|null View name
@@ -55,6 +56,9 @@ abstract class ViewModel extends SpatieViewModel
      *  // todo: make this optional, we dont always want to tag cached pages by user
      *
      * @return int
+     *
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
      */
     private function userId(): int
     {
@@ -79,13 +83,16 @@ abstract class ViewModel extends SpatieViewModel
      * // todo: add property?
      *
      * @return string
+     *
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
      */
     public function cacheKey(): string
     {
         return 'views'.
             ':'.$this->view.
             ':'.$this->userId().
-            ':'.(isset($this->redis_key) ? $this->redis_key : request()->fullUrl());
+            ':'.($this->redis_key ?? request()->fullUrl());
     }
 
     /**
@@ -109,6 +116,9 @@ abstract class ViewModel extends SpatieViewModel
      * @param  string|null  $view
      * @param  int|null  $ttl
      * @return string
+     *
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
      */
     public function render(string $view = null, int $ttl = null): string
     {
@@ -132,9 +142,9 @@ abstract class ViewModel extends SpatieViewModel
      * Render the ViewModel without storing or retrieving from the Cache.
      *
      * @param  string|null  $view
-     * @return Response|string|mixed
+     * @return string
      */
-    public function renderNoCache(string $view = null)
+    public function renderNoCache(string $view = null): string
     {
         // Set $view if it is not null
         if ($view) {
@@ -149,8 +159,11 @@ abstract class ViewModel extends SpatieViewModel
      *
      * @param  bool  $children
      * @return $this
+     *
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
      */
-    public function invalidateCache($children = true): self
+    public function invalidateCache(bool $children = true): self
     {
         RedisCache::delete($children ? 'views:'.$this->view : $this->cacheKey(), $children);
 

@@ -12,7 +12,7 @@ trait DateSetter
      * @param  Request  $request
      * @param  string  $key
      * @param  string  $time
-     * @return string
+     * @return string|null
      */
     private function setDay(Request $request, string $key, string $time = '00:00:00'): ?string
     {

@@ -19,17 +19,17 @@ class PreCacheViewModel extends Job
     /**
      * @var ViewModel
      */
-    private $viewModel;
+    private ViewModel $viewModel;
 
     /**
      * @var string
      */
-    private $route_name;
+    private string $route_name;
 
     /**
-     * @var array
+     * @var array|null
      */
-    private $route_data;
+    private ?array $route_data;
 
     /**
      * PreCacheViewModel constructor.
@@ -48,9 +48,9 @@ class PreCacheViewModel extends Job
     /**
      * Send a GuzzleHttp get request (intended for pre-caching a views).
      *
-     * @return mixed
+     * @return string
      */
-    public function handle()
+    public function handle(): string
     {
         return $this->viewModel
             ->setRedisKey(route($this->route_name, $this->route_data))
