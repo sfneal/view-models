@@ -2,7 +2,6 @@
 
 namespace Sfneal\ViewModels;
 
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\View;
 use Psr\Container\ContainerExceptionInterface;
@@ -57,6 +56,7 @@ abstract class ViewModel extends SpatieViewModel
      *  // todo: make this optional, we dont always want to tag cached pages by user
      *
      * @return int
+     *
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
@@ -83,6 +83,7 @@ abstract class ViewModel extends SpatieViewModel
      * // todo: add property?
      *
      * @return string
+     *
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
@@ -112,9 +113,10 @@ abstract class ViewModel extends SpatieViewModel
     /**
      * Retrieve/render the ViewModel from/to the application cache.
      *
-     * @param string|null $view
-     * @param int|null $ttl
+     * @param  string|null  $view
+     * @param  int|null  $ttl
      * @return string
+     *
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
@@ -155,8 +157,9 @@ abstract class ViewModel extends SpatieViewModel
     /**
      * Invalidate the View Cache for this ViewModel.
      *
-     * @param bool $children
+     * @param  bool  $children
      * @return $this
+     *
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */

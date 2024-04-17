@@ -9,9 +9,9 @@ trait DateSetter
     /**
      * Set a search value for $start or $end property.
      *
-     * @param Request $request
-     * @param string $key
-     * @param string $time
+     * @param  Request  $request
+     * @param  string  $key
+     * @param  string  $time
      * @return string|null
      */
     private function setDay(Request $request, string $key, string $time = '00:00:00'): ?string
