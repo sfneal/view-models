@@ -34,7 +34,7 @@ class PreCacheViewModel extends Job
     /**
      * PreCacheViewModel constructor.
      *
-     * @param $viewModel
+     * @param  $viewModel
      * @param  string  $route_name
      * @param  array|null  $route_data
      */
