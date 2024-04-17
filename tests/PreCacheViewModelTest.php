@@ -22,7 +22,7 @@ class PreCacheViewModelTest extends TestCase
 
     public function test_pre_cache()
     {
-        PreCacheViewModel::dispatchSync($this->viewModel, 'test');
+        (new PreCacheViewModel($this->viewModel, 'test'))->handle();
 
         $this->assertTrue($this->viewModel->isCached());
         $this->assertIsString($this->viewModel->cacheKey());
