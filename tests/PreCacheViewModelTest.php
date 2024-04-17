@@ -22,7 +22,7 @@ class PreCacheViewModelTest extends TestCase
 
     public function test_pre_cache()
     {
-        PreCacheViewModel::dispatchNow($this->viewModel, 'test');
+        PreCacheViewModel::dispatchSync($this->viewModel, 'test');
 
         $this->assertTrue($this->viewModel->isCached());
         $this->assertIsString($this->viewModel->cacheKey());
@@ -46,7 +46,7 @@ class PreCacheViewModelTest extends TestCase
     public function test_pre_cache_is_the_same_as_rendered()
     {
         $renderNoCache = $this->viewModel->renderNoCache();
-        PreCacheViewModel::dispatchNow($this->viewModel, 'test');
+        PreCacheViewModel::dispatchSync($this->viewModel, 'test');
         $render = $this->viewModel->render();
 
         $this->assertIsString($renderNoCache);
