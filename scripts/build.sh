@@ -37,7 +37,9 @@ export TAG
 
 # Build the image
 echo "Building image: stephenneal/view-models:${TAG}"
+echo "Building image: stephenneal/view-models:latest"
 docker build -t stephenneal/view-models:"${TAG}" \
+    -t stephenneal/view-models:"latest" \
     --build-arg php_composer_tag="${PHP_COMPOSER_TAG}" \
     --build-arg composer_flags="${COMPOSER_FLAGS}" \
      .
