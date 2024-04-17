@@ -33,7 +33,7 @@ abstract class ViewModel extends SpatieViewModel
     /**
      * View Directory Prefix.
      */
-    public string $prefix;
+    public string $prefix = '';
 
     /**
      * @var string|null View name
@@ -91,7 +91,7 @@ abstract class ViewModel extends SpatieViewModel
         return 'views'.
             ':'.$this->view.
             ':'.$this->userId().
-            ':'.$this->redis_key ?? request()->fullUrl();
+            ':'.($this->redis_key ?? request()->fullUrl());
     }
 
     /**
