@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": "^8.0|^8.1|^8.2|^8.3",
-        "sfneal/caching": "^2.0|^3.0",
+        "sfneal/caching": "^2.0|^3.0|^4.0",
         "sfneal/laravel-helpers": "^2.4",
         "sfneal/queueables": "^2.0",
         "sfneal/redis-helpers": "^1.2|^2.0",
