@@ -20,7 +20,7 @@
         "sfneal/caching": "^2.0|^3.0|^4.0",
         "sfneal/laravel-helpers": "^2.4",
         "sfneal/queueables": "^2.0",
-        "sfneal/redis-helpers": "^1.2|^2.0",
+        "sfneal/redis-helpers": "^1.2|^2.0|^3.0",
         "sfneal/string-helpers": "^1.0",
         "spatie/laravel-view-models": "^1.1"
     },
