@@ -144,3 +144,11 @@ All notable changes to `view-models` will be documented in this file
 - removed unused classes/files
 - add return type hinting
 - general code cleanup
+
+
+## 5.1.1 - 2024-04-24
+- bump sfneal/caching requirement from ^2.0|^3.0 to ^2.0|^3.0|^4.0
+
+
+## 5.1.2 - 2024-04-30
+- bump sfneal/redis-helpers requirement from ^1.2|^2.0 to ^1.2|^2.0|^3.0
