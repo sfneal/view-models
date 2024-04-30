@@ -151,4 +151,4 @@ All notable changes to `view-models` will be documented in this file
 
 
 ## 5.1.2 - 2024-04-30
-- sfneal sfneal/redis-helpers requirement from ^1.2|^2.0 to ^1.2|^2.0|^3.0
+- bump sfneal/redis-helpers requirement from ^1.2|^2.0 to ^1.2|^2.0|^3.0
