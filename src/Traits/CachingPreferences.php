@@ -53,4 +53,42 @@ trait CachingPreferences
 
         return $this;
     }
+
+    /**
+     * Disable ViewModel render caching if the app environment is 'local'.
+     *
+     * @return $this
+     */
+    public function dontCacheInLocal(): self
+    {
+        return $this->dontCacheInEnv('local');
+    }
+
+    /**
+     * Disable ViewModel render caching if the app environment is 'local'.
+     *
+     * @return $this
+     */
+    public function dontCacheInEnv(string $env): self
+    {
+        if (AppInfo::isEnv($env)) {
+            $this->cachingDisabled = true;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Disable caching if the environment is not 'production'.
+     *
+     * @return $this
+     */
+    public function onlyCacheInProduction(): self
+    {
+        if (! AppInfo::isEnvProduction()) {
+            $this->cachingDisabled = true;
+        }
+
+        return $this;
+    }
 }
