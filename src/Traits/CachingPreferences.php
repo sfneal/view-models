@@ -79,7 +79,7 @@ trait CachingPreferences
     }
 
     /**
-     * Disable caching if the environment is not 'production'
+     * Disable caching if the environment is not 'production'.
      *
      * @return $this
      */
