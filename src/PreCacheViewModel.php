@@ -38,7 +38,7 @@ class PreCacheViewModel extends Job
      * @param  string  $route_name
      * @param  array|null  $route_data
      */
-    public function __construct($viewModel, string $route_name, array $route_data = null)
+    public function __construct($viewModel, string $route_name, ?array $route_data = null)
     {
         $this->viewModel = $viewModel;
         $this->route_name = $route_name;

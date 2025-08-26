@@ -120,7 +120,7 @@ abstract class ViewModel extends SpatieViewModel
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
-    public function render(string $view = null, int $ttl = null): string
+    public function render(?string $view = null, ?int $ttl = null): string
     {
         // Don't cache if caching has been disabled
         if ($this->cachingDisabled) {
@@ -144,7 +144,7 @@ abstract class ViewModel extends SpatieViewModel
      * @param  string|null  $view
      * @return string
      */
-    public function renderNoCache(string $view = null): string
+    public function renderNoCache(?string $view = null): string
     {
         // Set $view if it is not null
         if ($view) {
@@ -205,7 +205,7 @@ abstract class ViewModel extends SpatieViewModel
      * @param  int|null  $ttl
      * @return int
      */
-    public function getTTL(int $ttl = null): int
+    public function getTTL(?int $ttl = null): int
     {
         return intval($ttl ?? $this->ttl ?? config('redis-helpers.ttl'));
     }
